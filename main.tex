@@ -1,0 +1,96 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{graphicx}
+
+\usepackage{pgf}            % <-- Core PGF commands
+\usepackage{pgfplots}       % Optional, adds more plotting power
+\pgfplotsset{compat=1.18}
+\usepackage{glossaries}
+\usepackage{biblatex}
+\usepackage{svg}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{lipsum}  
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{amsmath, amssymb}
+\usepackage[top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+
+% \usepackage{fancyhdr}
+\usepackage{csquotes}
+\usepackage[ngerman]{babel}
+\graphicspath{{img/pgf/}}
+\addbibresource{./bib/lit.bib}
+% \setmainfont{Latin Modern Roman} 
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10},
+  rulecolor=\color{gray!50},
+  xleftmargin=1em,
+  xrightmargin=1em,
+}
+
+
+\makeatletter
+\providecommand{\mathdefault}[1]{#1}
+\makeatother
+
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{14.5pt} % Increase head height
+% \addtolength{\topmargin}{-0.5pt} % Adjust top margin to compensate
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\sloppy
+
+
+\begin{document}
+
+% Title page
+\input{sections/titlepage.tex}
+\cleardoublepage  % Ensure no duplicate bookmarks
+
+% Table of contents
+\tableofcontents
+\cleardoublepage
+
+% List of Figures (Avoid duplicate page labels)
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+% Sections
+% \input{sections/einleitung.tex}
+% \cleardoublepage
+
+
+
+% Bibliography
+
+% \chapter*{References}
+% \addcontentsline{toc}{chapter}{References}
+% \bibliography{bib/lit.tex}
+% \bibliographystyle{ieeetr}
+\printbibliography
+\cleardoublepage
+
+\appendix
+\input{appendix/tools.tex}
+\cleardoublepage
+
+
+
+\end{document}
